@@ -6,6 +6,12 @@ type Props = {
     params: Promise<{id: string}>;
 };
 
+export async function generateStaticParams() {
+    return apps.map((app) => ({
+        id: app.id,
+    }));
+}
+
 export default async function AppDetailPage({params}: Props) {
     const {id} = await params;
     const app = apps.find((a) => a.id === id);
@@ -38,14 +44,16 @@ export default async function AppDetailPage({params}: Props) {
 
                     {/* リンク */}
                     <div className="flex flex-col sm:flex-row gap-3">
-                        <a
-                            href={app.siteUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-center text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-lg px-6 py-3 transition-colors duration-200"
-                        >
-                            サイトを見る
-                        </a>
+                        {app.siteUrl && (
+                            <a
+                                href={app.siteUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-center text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-lg px-6 py-3 transition-colors duration-200"
+                            >
+                                サイトを見る
+                            </a>
+                        )}
                         <a
                             href={app.githubUrl}
                             target="_blank"

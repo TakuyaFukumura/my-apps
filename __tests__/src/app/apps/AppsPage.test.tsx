@@ -57,9 +57,16 @@ describe('AppsPage', () => {
             });
         });
 
-        it('各アプリにサイトリンクが表示される', () => {
-            const siteLinks = screen.getAllByRole('link', {name: 'サイトを見る'});
-            expect(siteLinks).toHaveLength(apps.length);
+        it('各アプリにGitHubリンクが表示される', () => {
+            const githubLinks = screen.getAllByRole('link', {name: 'GitHubを見る'});
+            expect(githubLinks).toHaveLength(apps.length);
+        });
+
+        it('siteUrlが未設定の場合サイトリンクが表示されない', () => {
+            const appsWithoutSite = apps.filter((app) => !app.siteUrl);
+            if (appsWithoutSite.length === apps.length) {
+                expect(screen.queryByRole('link', {name: 'サイトを見る'})).not.toBeInTheDocument();
+            }
         });
 
         it('各アプリに詳細リンクが表示される', () => {

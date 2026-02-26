@@ -4,7 +4,7 @@ export type App = {
     shortDescription: string;
     description: string;
     githubUrl: string;
-    siteUrl: string;
+    siteUrl?: string;
 };
 
 export const AUTHOR = {
@@ -21,7 +21,6 @@ export const apps: App[] = [
             '株式や投資信託から受け取った配当金の履歴をグラフで可視化するアプリです。' +
             '銘柄ごとの配当金や年間推移を一目で確認でき、投資管理に役立てることができます。',
         githubUrl: 'https://github.com/TakuyaFukumura/divichart-next-js-app',
-        siteUrl: 'https://github.com/TakuyaFukumura/divichart-next-js-app',
     },
     {
         id: 'visuasset',
@@ -31,7 +30,6 @@ export const apps: App[] = [
             '保有している資産の内訳や時系列での推移をグラフで可視化するアプリです。' +
             '資産のポートフォリオ管理や資産形成の進捗確認に活用できます。',
         githubUrl: 'https://github.com/TakuyaFukumura/visuasset-next-js-app',
-        siteUrl: 'https://github.com/TakuyaFukumura/visuasset-next-js-app',
     },
     {
         id: 'coast-fire',
@@ -43,7 +41,6 @@ export const apps: App[] = [
             'このアプリでは、目標退職年齢・目標資産額・期待利回りなどのパラメータを入力することで、' +
             'Coast FIRE達成に必要な現時点での資金を計算します。',
         githubUrl: 'https://github.com/TakuyaFukumura/coast-fire-next-js-app',
-        siteUrl: 'https://github.com/TakuyaFukumura/coast-fire-next-js-app',
     },
     {
         id: 'blog',
@@ -54,6 +51,5 @@ export const apps: App[] = [
             '記事の一覧表示や個別記事の表示に対応しており、' +
             'シンプルなブログプラットフォームとして利用できます。',
         githubUrl: 'https://github.com/TakuyaFukumura/blog-next-js-app',
-        siteUrl: 'https://github.com/TakuyaFukumura/blog-next-js-app',
     },
 ];

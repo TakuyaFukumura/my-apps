@@ -8,7 +8,7 @@ export default function AppsPage() {
 
                 {/* 作成者情報 */}
                 <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 mb-10 flex flex-col sm:flex-row items-center gap-4">
-                    <div className="flex-shrink-0 w-16 h-16 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center text-3xl">
+                    <div aria-hidden="true" className="flex-shrink-0 w-16 h-16 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center text-3xl">
                         👤
                     </div>
                     <div className="text-center sm:text-left">
@@ -41,13 +41,23 @@ export default function AppsPage() {
                                 {app.shortDescription}
                             </p>
                             <div className="flex flex-col gap-2 mt-auto">
+                                {app.siteUrl && (
+                                    <a
+                                        href={app.siteUrl}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-center text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-lg px-4 py-2 transition-colors duration-200"
+                                    >
+                                        サイトを見る
+                                    </a>
+                                )}
                                 <a
-                                    href={app.siteUrl}
+                                    href={app.githubUrl}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="text-center text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-lg px-4 py-2 transition-colors duration-200"
+                                    className="text-center text-sm font-medium text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 rounded-lg px-4 py-2 transition-colors duration-200"
                                 >
-                                    サイトを見る
+                                    GitHubを見る
                                 </a>
                                 <Link
                                     href={`/apps/${app.id}`}
