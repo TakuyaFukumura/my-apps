@@ -15,6 +15,12 @@ Next.jsを使ったシンプルな「Hello, world.」アプリケーションで
 ## 機能
 
 - SQLiteデータベースから「Hello, world.」メッセージを取得
+- **自作アプリ紹介画面**（`/apps`）
+    - 作成者情報セクションとアプリのレスポンシブタイルグリッド（モバイル1カラム・タブレット2カラム・PC3カラム）
+    - 各アプリのGitHubリンクと詳細ページへのリンク
+- **アプリ詳細画面**（`/apps/[id]`）
+    - 詳細説明・GitHubリンク・オプションのサイトリンク
+    - ビルド時静的生成（`generateStaticParams`）対応
 - レスポンシブデザイン対応
 - ダークモード対応（手動切替機能付き）
     - ライトモードとダークモードの2つのモードを手動で切り替え可能
@@ -108,6 +114,8 @@ pnpm start
 ## プロジェクト構造
 
 ```
+├── docs/
+│   └── app-showcase-spec.md # 自作アプリ紹介画面の仕様書
 ├── lib/
 │   └── database.ts          # SQLiteデータベース接続・操作
 ├── src/
@@ -115,6 +123,11 @@ pnpm start
 │       ├── api/
 │       │   └── message/
 │       │       └── route.ts # APIエンドポイント
+│       ├── apps/
+│       │   ├── [id]/
+│       │   │   └── page.tsx # アプリ詳細ページ (/apps/[id])
+│       │   ├── data.ts      # 紹介アプリと作成者のデータ定義
+│       │   └── page.tsx     # アプリ一覧ページ (/apps)
 │       ├── components/      # Reactコンポーネント
 │       │   ├── DarkModeProvider.tsx  # ダークモードProvider
 │       │   └── Header.tsx   # ヘッダーコンポーネント
@@ -204,7 +217,9 @@ npm run test:coverage
 
 - `__tests__/lib/database.test.ts`: データベース機能のテスト
 - `__tests__/src/app/components/DarkModeProvider.test.tsx`: ダークモードProvider のテスト
-- `__tests__/src/app/components/Header.test.tsx`: ヘッダーコンポーネントのテスト
+- `__tests__/src/app/components/Header.test.tsx`: ヘッダーコンポーネントのテスト（ナビゲーションリンクを含む）
+- `__tests__/src/app/apps/AppsPage.test.tsx`: アプリ一覧ページのテスト
+- `__tests__/src/app/apps/[id]/AppDetailPage.test.tsx`: アプリ詳細ページのテスト
 
 #### テストの特徴
 

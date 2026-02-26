@@ -11,6 +11,15 @@ import {DarkModeProvider} from '@/app/components/DarkModeProvider';
 import Header from '../../../../src/app/components/Header';
 import '@testing-library/jest-dom';
 
+// next/link のモック
+jest.mock('next/link', () => {
+    const MockLink = ({children, href}: {children: React.ReactNode; href: string}) => (
+        <a href={href}>{children}</a>
+    );
+    MockLink.displayName = 'MockLink';
+    return MockLink;
+});
+
 describe('Header', () => {
     const renderWithProvider = (initialTheme?: 'light' | 'dark') => {
         if (initialTheme) {
@@ -44,6 +53,28 @@ describe('Header', () => {
 
             const button = screen.getByRole('button');
             expect(button).toBeInTheDocument();
+        });
+    });
+
+    describe('ナビゲーション', () => {
+        it('ロゴがホームページ(/)へのリンクになっている', () => {
+            renderWithProvider();
+
+            const homeLink = screen.getByRole('link', {name: 'my-apps'});
+            expect(homeLink).toHaveAttribute('href', '/');
+        });
+
+        it('「アプリ一覧」ナビゲーションリンクが表示される', () => {
+            renderWithProvider();
+
+            expect(screen.getByRole('link', {name: 'アプリ一覧'})).toBeInTheDocument();
+        });
+
+        it('「アプリ一覧」リンクが/appsを指す', () => {
+            renderWithProvider();
+
+            const appsLink = screen.getByRole('link', {name: 'アプリ一覧'});
+            expect(appsLink).toHaveAttribute('href', '/apps');
         });
     });
 
