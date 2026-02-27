@@ -70,11 +70,11 @@ describe('Header', () => {
             expect(screen.getByRole('link', {name: 'アプリ一覧'})).toBeInTheDocument();
         });
 
-        it('「アプリ一覧」リンクが/appsを指す', () => {
+        it('「アプリ一覧」リンクが/を指す', () => {
             renderWithProvider();
 
             const appsLink = screen.getByRole('link', {name: 'アプリ一覧'});
-            expect(appsLink).toHaveAttribute('href', '/apps');
+            expect(appsLink).toHaveAttribute('href', '/');
         });
     });
 

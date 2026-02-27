@@ -60,9 +60,9 @@ describe('AppDetailPage', () => {
             expect(githubLink).toHaveAttribute('rel', 'noopener noreferrer');
         });
 
-        it('一覧に戻るリンクが/appsを指す', () => {
+        it('一覧に戻るリンクが/を指す', () => {
             const backLink = screen.getByRole('link', {name: '← アプリ一覧に戻る'});
-            expect(backLink).toHaveAttribute('href', '/apps');
+            expect(backLink).toHaveAttribute('href', '/');
         });
     });
 

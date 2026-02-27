@@ -27,7 +27,7 @@ export default async function AppDetailPage({params}: Props) {
                 <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8">
                     {/* 戻るリンク */}
                     <Link
-                        href="/apps"
+                        href="/"
                         className="inline-flex items-center text-sm text-blue-600 dark:text-blue-400 hover:underline mb-6"
                     >
                         ← アプリ一覧に戻る

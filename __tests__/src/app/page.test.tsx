@@ -1,13 +1,13 @@
 /**
- * アプリ一覧ページのテスト
+ * トップページのテスト
  *
- * このテストファイルは、src/app/apps/page.tsxの機能をテストします。
+ * このテストファイルは、src/app/page.tsxの機能をテストします。
  * アプリ一覧の表示と作成者情報の表示をテストしています。
  */
 
 import React from 'react';
 import {render, screen} from '@testing-library/react';
-import AppsPage from '@/app/apps/page';
+import Home from '@/app/page';
 import {apps, AUTHOR} from '@/app/apps/data';
 import '@testing-library/jest-dom';
 
@@ -20,9 +20,9 @@ jest.mock('next/link', () => {
     return MockLink;
 });
 
-describe('AppsPage', () => {
+describe('Home', () => {
     beforeEach(() => {
-        render(<AppsPage/>);
+        render(<Home/>);
     });
 
     describe('作成者情報', () => {
