@@ -3,7 +3,7 @@ import {notFound} from 'next/navigation';
 import {apps} from '../data';
 
 type Props = {
-    params: Promise<{id: string}>;
+    params: Promise<{ id: string }>;
 };
 
 export async function generateStaticParams() {
@@ -21,7 +21,8 @@ export default async function AppDetailPage({params}: Props) {
     }
 
     return (
-        <div className="min-h-[calc(100vh-4rem)] bg-linear-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800 py-12 px-4 sm:px-6 lg:px-8">
+        <div
+            className="min-h-[calc(100vh-4rem)] bg-linear-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800 py-12 px-4 sm:px-6 lg:px-8">
             <div className="max-w-2xl mx-auto">
                 <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8">
                     {/* 戻るリンク */}

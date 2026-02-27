@@ -8,12 +8,12 @@
 import React from 'react';
 import {render, screen} from '@testing-library/react';
 import AppsPage from '@/app/apps/page';
-import {AUTHOR, apps} from '@/app/apps/data';
+import {apps, AUTHOR} from '@/app/apps/data';
 import '@testing-library/jest-dom';
 
 // next/link のモック
 jest.mock('next/link', () => {
-    const MockLink = ({children, href}: {children: React.ReactNode; href: string}) => (
+    const MockLink = ({children, href}: { children: React.ReactNode; href: string }) => (
         <a href={href}>{children}</a>
     );
     MockLink.displayName = 'MockLink';
