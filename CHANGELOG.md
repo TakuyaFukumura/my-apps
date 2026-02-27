@@ -5,6 +5,22 @@
 フォーマットは [Keep a Changelog](https://keepachangelog.com/ja/1.0.0/) に基づいており、
 このプロジェクトは [Semantic Versioning](https://semver.org/lang/ja/) に従っています。
 
+## [0.5.1] - 2026-02-27
+
+### 変更
+
+- `README.md` を現況に合わせて更新
+    - アプリ概要をSQLite/Hello worldの説明から自作アプリ紹介サイトの説明に変更
+    - 技術スタックからSQLite（better-sqlite3）を削除
+    - 機能セクションのアプリ一覧画面のURLを `/apps` から `/` に変更
+    - プロジェクト構造から `lib/database.ts`・`api/message/`・`data/` を削除し、現状に合わせて更新
+    - APIエンドポイントセクションを削除
+    - データベースセクションを削除
+    - カスタマイズセクションからメッセージ変更の説明を削除
+    - テストファイル構成を現状に合わせて更新（database.test.ts削除、page.test.tsx追加）
+    - テストの特徴からデータベーステストの説明を削除
+    - トラブルシューティングからデータベース関連エラーの説明を削除
+
 ## [0.5.0] - 2026-02-27
 
 ### 変更
