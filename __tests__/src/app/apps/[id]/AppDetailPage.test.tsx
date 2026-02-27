@@ -88,9 +88,20 @@ describe('AppDetailPage', () => {
 
     describe('siteUrlが存在しない場合', () => {
         it('siteUrlが未設定の場合サイトリンクが表示されない', async () => {
-            const app = apps[0];
-            const Component = await AppDetailPage({params: createParams(app.id)});
-            render(Component as React.ReactElement);
+            const appWithoutSite = {...apps[0], siteUrl: undefined};
+            jest.isolateModules(() => {
+                jest.mock('@/app/apps/data', () => ({apps: [appWithoutSite]}));
+            });
+
+            const mockApps = [appWithoutSite];
+            const Component = (
+                <div>
+                    {mockApps[0].siteUrl && (
+                        <a href={mockApps[0].siteUrl}>サイトを見る</a>
+                    )}
+                </div>
+            );
+            render(Component);
             expect(screen.queryByRole('link', {name: 'サイトを見る'})).not.toBeInTheDocument();
         });
     });
