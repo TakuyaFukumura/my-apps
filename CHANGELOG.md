@@ -5,6 +5,20 @@
 フォーマットは [Keep a Changelog](https://keepachangelog.com/ja/1.0.0/) に基づいており、
 このプロジェクトは [Semantic Versioning](https://semver.org/lang/ja/) に従っています。
 
+## [0.4.0] - 2026-02-27
+
+### 追加
+
+- 全アプリにデプロイ先URL（`siteUrl`）を設定
+  - 配当可視化アプリ: https://divichart-next-js-app.vercel.app/
+  - 資産可視化アプリ: https://visuasset-next-js-app.vercel.app/
+  - Coast FIRE 必要資金計算アプリ: https://coast-fire-next-js-app.vercel.app/
+  - ブログアプリ: https://blog-next-js-app-taupe.vercel.app/
+
+### 変更
+
+- アプリ一覧画面からGitHubリンクを削除し、デプロイ先リンクのみ表示するよう変更
+
 ## [0.3.0] - 2026-02-27
 
 ### 変更

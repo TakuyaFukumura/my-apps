@@ -54,14 +54,6 @@ export default function AppsPage() {
                                         サイトを見る
                                     </a>
                                 )}
-                                <a
-                                    href={app.githubUrl}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="text-center text-sm font-medium text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 rounded-lg px-4 py-2 transition-colors duration-200"
-                                >
-                                    GitHubを見る
-                                </a>
                                 <Link
                                     href={`/apps/${app.id}`}
                                     className="text-center text-sm font-medium text-blue-600 dark:text-blue-400 hover:underline"
