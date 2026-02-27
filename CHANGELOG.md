@@ -5,6 +5,15 @@
 フォーマットは [Keep a Changelog](https://keepachangelog.com/ja/1.0.0/) に基づいており、
 このプロジェクトは [Semantic Versioning](https://semver.org/lang/ja/) に従っています。
 
+## [0.3.0] - 2026-02-27
+
+### 変更
+
+- ホーム画面を削除し、ルートパス (`/`) をアプリ一覧画面 (`/apps`) へリダイレクトするよう変更
+- DB関連処理（SQLite・`/api/message` エンドポイント・`lib/database.ts`）を削除
+- `better-sqlite3` 依存パッケージを削除
+- レイアウトのメタデータ（タイトル・説明文）をアプリ一覧に合わせて更新
+
 ## [0.2.0] - 2026-02-26
 
 ### 追加
