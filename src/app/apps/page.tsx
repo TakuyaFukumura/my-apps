@@ -1,14 +1,17 @@
 import Link from 'next/link';
-import {AUTHOR, apps} from './data';
+import {apps, AUTHOR} from './data';
 
 export default function AppsPage() {
     return (
-        <div className="min-h-[calc(100vh-4rem)] bg-linear-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800 py-12 px-4 sm:px-6 lg:px-8">
+        <div
+            className="min-h-[calc(100vh-4rem)] bg-linear-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800 py-12 px-4 sm:px-6 lg:px-8">
             <div className="max-w-6xl mx-auto">
 
                 {/* 作成者情報 */}
-                <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 mb-10 flex flex-col sm:flex-row items-center gap-4">
-                    <div aria-hidden="true" className="flex-shrink-0 w-16 h-16 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center text-3xl">
+                <div
+                    className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 mb-10 flex flex-col sm:flex-row items-center gap-4">
+                    <div aria-hidden="true"
+                         className="flex-shrink-0 w-16 h-16 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center text-3xl">
                         👤
                     </div>
                     <div className="text-center sm:text-left">
