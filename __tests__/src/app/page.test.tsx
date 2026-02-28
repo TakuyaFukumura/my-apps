@@ -64,7 +64,8 @@ describe('Home', () => {
 
         it('各アプリにデプロイ先リンクが表示される', () => {
             const siteLinks = screen.getAllByRole('link', {name: /のサイトを見る/});
-            expect(siteLinks).toHaveLength(apps.length);
+            const appsWithSiteUrlCount = apps.filter((app) => app.siteUrl).length;
+            expect(siteLinks).toHaveLength(appsWithSiteUrlCount);
         });
 
         it('各アプリのデプロイ先リンクが正しいhrefを持つ', () => {
@@ -96,7 +97,7 @@ describe('Home', () => {
         });
 
         it('「詳細を見る →」リンクが表示されない', () => {
-            const detailLinks = screen.queryAllByRole('link', {name: /詳細を見る/});
+            const detailLinks = screen.queryAllByText('詳細を見る →');
             expect(detailLinks).toHaveLength(0);
         });
     });

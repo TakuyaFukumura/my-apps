@@ -40,12 +40,25 @@ export default function Home() {
                     {apps.map((app) => (
                         <div
                             key={app.id}
-                            onClick={() => router.push(`/apps/${app.id}`)}
+                            onClick={(e) => {
+                                const target = e.target as HTMLElement | null;
+                                if (target?.closest('a')) return;
+                                router.push(`/apps/${app.id}`);
+                            }}
                             onKeyDown={(e) => {
-                                if (e.key === 'Enter' || e.key === ' ') router.push(`/apps/${app.id}`);
+                                const target = e.target as HTMLElement | null;
+                                if (target?.closest('a')) return;
+                                // カード自身にフォーカスがある場合のみ処理し、子要素からのキーイベントは無視
+                                if (e.currentTarget !== e.target) return;
+                                if (e.key === 'Enter' || e.key === ' ') {
+                                    // Space のデフォルトスクロールを抑止
+                                    e.preventDefault();
+                                    router.push(`/apps/${app.id}`);
+                                }
                             }}
                             tabIndex={0}
-                            role="button"
+                            role="link"
+                            aria-label={`${app.name} の詳細を見る`}
                             className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 flex flex-col hover:shadow-xl hover:-translate-y-1 transition-all duration-200 cursor-pointer"
                         >
                             <h2 className="text-lg font-bold mb-3">
