@@ -88,14 +88,14 @@ describe('Header', () => {
         it('ライトモード時のラベルが表示される', () => {
             renderWithProvider('light');
 
-            expect(screen.getByText('ライトモード')).toBeInTheDocument();
+            expect(screen.getByText('ダークモードにする')).toBeInTheDocument();
         });
 
         it('ボタンのtitle属性が正しく設定される', () => {
             renderWithProvider('light');
 
             const button = screen.getByRole('button');
-            expect(button).toHaveAttribute('title', '現在: ライトモード');
+            expect(button).toHaveAttribute('title', 'ダークモードにする');
         });
     });
 
@@ -111,14 +111,14 @@ describe('Header', () => {
             window.localStorage.setItem('theme', 'dark');
             renderWithProvider();
 
-            expect(screen.getByText('ダークモード')).toBeInTheDocument();
+            expect(screen.getByText('ライトモードにする')).toBeInTheDocument();
         });
 
         it('ボタンのtitle属性が正しく設定される', () => {
             renderWithProvider('dark');
 
             const button = screen.getByRole('button');
-            expect(button).toHaveAttribute('title', '現在: ダークモード');
+            expect(button).toHaveAttribute('title', 'ライトモードにする');
         });
     });
 
@@ -129,7 +129,7 @@ describe('Header', () => {
 
             // 初期状態の確認
             expect(screen.getByText('☀️')).toBeInTheDocument();
-            expect(screen.getByText('ライトモード')).toBeInTheDocument();
+            expect(screen.getByText('ダークモードにする')).toBeInTheDocument();
 
             // ボタンをクリック
             const button = screen.getByRole('button');
@@ -137,7 +137,7 @@ describe('Header', () => {
 
             // ダークモードに変更されたことを確認
             expect(screen.getByText('🌙')).toBeInTheDocument();
-            expect(screen.getByText('ダークモード')).toBeInTheDocument();
+            expect(screen.getByText('ライトモードにする')).toBeInTheDocument();
         });
 
         it('ダークモードからライトモードに切り替わる', () => {
@@ -145,7 +145,7 @@ describe('Header', () => {
 
             // 初期状態の確認
             expect(screen.getByText('🌙')).toBeInTheDocument();
-            expect(screen.getByText('ダークモード')).toBeInTheDocument();
+            expect(screen.getByText('ライトモードにする')).toBeInTheDocument();
 
             // ボタンをクリック
             const button = screen.getByRole('button');
@@ -153,7 +153,7 @@ describe('Header', () => {
 
             // ライトモードに変更されたことを確認
             expect(screen.getByText('☀️')).toBeInTheDocument();
-            expect(screen.getByText('ライトモード')).toBeInTheDocument();
+            expect(screen.getByText('ダークモードにする')).toBeInTheDocument();
         });
 
         it('複数回のクリックで正しく切り替わる', () => {
@@ -194,7 +194,7 @@ describe('Header', () => {
 
             // title属性による説明があることを確認
             expect(button).toHaveAttribute('title');
-            expect(button.getAttribute('title')).toContain('現在:');
+            expect(button.getAttribute('title')).toBeTruthy();
         });
     });
 
@@ -206,7 +206,7 @@ describe('Header', () => {
 
         it('テキストラベルが適切なクラスで制御されている', () => {
             // 'hidden sm:inline' クラスでモバイルでは非表示になることを想定
-            const textLabel = screen.getByText('ライトモード');
+            const textLabel = screen.getByText('ダークモードにする');
             expect(textLabel).toHaveClass('hidden', 'sm:inline');
         });
 
