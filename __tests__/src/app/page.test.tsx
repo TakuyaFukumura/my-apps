@@ -13,8 +13,8 @@ import '@testing-library/jest-dom';
 
 // next/link のモック
 jest.mock('next/link', () => {
-    const MockLink = ({children, href}: { children: React.ReactNode; href: string }) => (
-        <a href={href}>{children}</a>
+    const MockLink = ({children, href, ...rest}: { children: React.ReactNode; href: string; [key: string]: unknown }) => (
+        <a href={href} {...rest}>{children}</a>
     );
     MockLink.displayName = 'MockLink';
     return MockLink;
@@ -89,10 +89,18 @@ describe('Home', () => {
             });
         });
 
-        it('各アプリ名が詳細ページへのリンクになっている', () => {
+        it('各アプリ名が表示される', () => {
             apps.forEach((app) => {
-                const nameLink = screen.getByRole('link', {name: app.name});
-                expect(nameLink).toHaveAttribute('href', `/apps/${app.id}`);
+                expect(screen.getByText(app.name)).toBeInTheDocument();
+            });
+        });
+
+        it('各カードに詳細ページへのオーバーレイリンクが存在する', () => {
+            apps.forEach((app) => {
+                const overlayLink = screen.getByRole('link', {
+                    name: `${app.name} の詳細を見る`,
+                });
+                expect(overlayLink).toHaveAttribute('href', `/apps/${app.id}`);
             });
         });
 
