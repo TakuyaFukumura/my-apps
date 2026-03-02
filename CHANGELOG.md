@@ -7,6 +7,14 @@
 
 ## [Unreleased]
 
+## [0.7.0] - 2026-03-02
+
+### 追加
+
+- NISA利用状況可視化アプリをアプリ一覧に追加
+    - GitHub: https://github.com/TakuyaFukumura/nisa-next-js-app
+    - サイト: https://nisa-next-js-app.vercel.app/
+
 ### 変更
 
 - `README.md` を現況に合わせて更新
