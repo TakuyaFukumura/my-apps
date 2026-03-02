@@ -56,4 +56,15 @@ export const apps: App[] = [
         githubUrl: 'https://github.com/TakuyaFukumura/blog-next-js-app',
         siteUrl: 'https://blog-next-js-app-taupe.vercel.app/',
     },
+    {
+        id: 'nisa',
+        name: 'NISA利用状況可視化アプリ',
+        shortDescription: 'NISAの利用状況をグラフで可視化するアプリです。',
+        description:
+            'NISA（少額投資非課税制度）の利用状況をグラフで可視化するアプリです。' +
+            '年間投資枠の使用状況や非課税保有残高などを一目で確認でき、' +
+            'NISA枠の管理に役立てることができます。',
+        githubUrl: 'https://github.com/TakuyaFukumura/nisa-next-js-app',
+        siteUrl: 'https://nisa-next-js-app.vercel.app/',
+    },
 ];
