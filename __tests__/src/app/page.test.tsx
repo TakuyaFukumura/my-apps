@@ -13,12 +13,17 @@ import '@testing-library/jest-dom';
 
 // next/link のモック
 jest.mock('next/link', () => {
-    const MockLink = ({children, href}: { children: React.ReactNode; href: string }) => (
-        <a href={href}>{children}</a>
+    const MockLink = ({children, href, ...rest}: { children: React.ReactNode; href: string; [key: string]: unknown }) => (
+        <a href={href} {...rest}>{children}</a>
     );
     MockLink.displayName = 'MockLink';
     return MockLink;
 });
+
+// next/navigation のモック
+jest.mock('next/navigation', () => ({
+    useRouter: () => ({push: jest.fn()}),
+}));
 
 describe('Home', () => {
     beforeEach(() => {
@@ -58,31 +63,50 @@ describe('Home', () => {
         });
 
         it('各アプリにデプロイ先リンクが表示される', () => {
-            const siteLinks = screen.getAllByRole('link', {name: 'サイトを見る'});
-            expect(siteLinks).toHaveLength(apps.length);
+            const siteLinks = screen.getAllByRole('link', {name: /のサイトを見る/});
+            const appsWithSiteUrlCount = apps.filter((app) => app.siteUrl).length;
+            expect(siteLinks).toHaveLength(appsWithSiteUrlCount);
         });
 
         it('各アプリのデプロイ先リンクが正しいhrefを持つ', () => {
             apps.forEach((app) => {
                 if (app.siteUrl) {
-                    const siteLinks = screen.getAllByRole('link', {name: 'サイトを見る'});
+                    const siteLinks = screen.getAllByRole('link', {name: /のサイトを見る/});
                     const siteLink = siteLinks.find((l) => l.getAttribute('href') === app.siteUrl);
                     expect(siteLink).toBeInTheDocument();
                 }
             });
         });
 
-        it('各アプリに詳細リンクが表示される', () => {
-            const detailLinks = screen.getAllByRole('link', {name: /詳細を見る/});
-            expect(detailLinks).toHaveLength(apps.length);
+        it('各アプリのデプロイ先リンクにaria-labelが設定される', () => {
+            apps.forEach((app) => {
+                if (app.siteUrl) {
+                    const siteLink = screen.getByRole('link', {
+                        name: `${app.name} のサイトを見る（新しいタブで開く）`,
+                    });
+                    expect(siteLink).toBeInTheDocument();
+                }
+            });
         });
 
-        it('詳細リンクが正しいパスを持つ', () => {
+        it('各アプリ名が表示される', () => {
             apps.forEach((app) => {
-                const detailLinks = screen.getAllByRole('link', {name: '詳細を見る →'});
-                const detailLink = detailLinks.find((l) => l.getAttribute('href') === `/apps/${app.id}`);
-                expect(detailLink).toBeInTheDocument();
+                expect(screen.getByText(app.name)).toBeInTheDocument();
             });
+        });
+
+        it('各カードに詳細ページへのオーバーレイリンクが存在する', () => {
+            apps.forEach((app) => {
+                const overlayLink = screen.getByRole('link', {
+                    name: `${app.name} の詳細を見る`,
+                });
+                expect(overlayLink).toHaveAttribute('href', `/apps/${app.id}`);
+            });
+        });
+
+        it('「詳細を見る →」リンクが表示されない', () => {
+            const detailLinks = screen.queryAllByText('詳細を見る →');
+            expect(detailLinks).toHaveLength(0);
         });
     });
 });

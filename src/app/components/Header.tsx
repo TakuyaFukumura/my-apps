@@ -24,9 +24,9 @@ export default function Header() {
 
     const getThemeLabel = () => {
         if (theme === 'light') {
-            return 'ライトモード';
+            return 'ダークモードにする';
         } else {
-            return 'ダークモード';
+            return 'ライトモードにする';
         }
     };
 
@@ -58,7 +58,7 @@ export default function Header() {
                             className="flex items-center gap-2 px-3 py-2 text-sm font-medium
                             text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700
                             rounded-lg transition-colors duration-200"
-                            title={`現在: ${getThemeLabel()}`}
+                            title={getThemeLabel()}
                         >
                             <span className="text-lg">{getThemeIcon()}</span>
                             <span className="hidden sm:inline">{getThemeLabel()}</span>
