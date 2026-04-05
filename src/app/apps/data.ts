@@ -67,4 +67,15 @@ export const apps: App[] = [
         githubUrl: 'https://github.com/TakuyaFukumura/nisa-next-js-app',
         siteUrl: 'https://nisa-next-js-app.vercel.app/',
     },
+    {
+        id: 'household-management',
+        name: '家計簿アプリ',
+        shortDescription: 'CSVファイルから収支データを読み込み、グラフで可視化する家計簿アプリです。',
+        description:
+            'CSVファイルから収支データを読み込み、サマリーカード・カテゴリ別集計・' +
+            'ドーナツグラフ・横棒グラフ・一覧テーブルで収支を可視化するアプリです。' +
+            '予算管理機能やCSVアップロード機能も備えており、家計の管理に役立てることができます。',
+        githubUrl: 'https://github.com/TakuyaFukumura/household-management-next-js-app',
+        siteUrl: 'https://household-management-next-js-app.vercel.app/',
+    },
 ];
