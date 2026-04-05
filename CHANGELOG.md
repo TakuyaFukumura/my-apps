@@ -7,6 +7,14 @@
 
 ## [Unreleased]
 
+## [0.8.0] - 2026-04-05
+
+### 追加
+
+- 家計簿アプリをアプリ一覧に追加
+    - GitHub: https://github.com/TakuyaFukumura/household-management-next-js-app
+    - サイト: https://household-management-next-js-app.vercel.app/
+
 ## [0.7.0] - 2026-03-02
 
 ### 追加
