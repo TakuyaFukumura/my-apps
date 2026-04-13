@@ -7,6 +7,14 @@
 
 ## [Unreleased]
 
+## [0.9.0] - 2026-04-13
+
+### 追加
+
+- 積立投資シミュレーターをアプリ一覧に追加
+    - GitHub: https://github.com/TakuyaFukumura/investment-simulator-vue-js
+    - サイト: https://investment-simulator-vue-js.vercel.app/
+
 ## [0.8.0] - 2026-04-05
 
 ### 追加
