@@ -11,6 +11,12 @@ import Home from '@/app/page';
 import {apps, AUTHOR} from '@/app/apps/data';
 import '@testing-library/jest-dom';
 
+const reversiApp = {
+    id: 'reversi',
+    name: 'リバーシアプリ',
+    siteUrl: 'https://reversi-next-js-app.vercel.app/',
+} as const;
+
 // next/link のモック
 jest.mock('next/link', () => {
     const MockLink = ({children, href, ...rest}: { children: React.ReactNode; href: string; [key: string]: unknown }) => (
@@ -102,6 +108,20 @@ describe('Home', () => {
                 });
                 expect(overlayLink).toHaveAttribute('href', `/apps/${app.id}`);
             });
+        });
+
+        it('リバーシアプリが一覧に追加されている', () => {
+            expect(screen.getByText(reversiApp.name)).toBeInTheDocument();
+
+            const siteLink = screen.getByRole('link', {
+                name: `${reversiApp.name} のサイトを見る（新しいタブで開く）`,
+            });
+            expect(siteLink).toHaveAttribute('href', reversiApp.siteUrl);
+
+            const detailLink = screen.getByRole('link', {
+                name: `${reversiApp.name} の詳細を見る`,
+            });
+            expect(detailLink).toHaveAttribute('href', `/apps/${reversiApp.id}`);
         });
 
         it('「詳細を見る →」リンクが表示されない', () => {
