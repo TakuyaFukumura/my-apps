@@ -7,6 +7,14 @@
 
 ## [Unreleased]
 
+## [0.10.0] - 2026-04-30
+
+### 追加
+
+- リバーシアプリをアプリ一覧に追加
+    - GitHub: https://github.com/TakuyaFukumura/reversi-next-js-app
+    - サイト: https://reversi-next-js-app.vercel.app/
+
 ## [0.9.0] - 2026-04-13
 
 ### 追加

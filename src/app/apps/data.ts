@@ -89,4 +89,14 @@ export const apps: App[] = [
         githubUrl: 'https://github.com/TakuyaFukumura/investment-simulator-vue-js',
         siteUrl: 'https://investment-simulator-vue-js.vercel.app/',
     },
+    {
+        id: 'reversi',
+        name: 'リバーシアプリ',
+        shortDescription: 'ブラウザ上でリバーシを遊べるアプリです。',
+        description:
+            'ブラウザ上でリバーシを遊べるアプリです。' +
+            '盤面を見ながら石を配置し、対戦の進行にあわせてゲームを楽しめます。',
+        githubUrl: 'https://github.com/TakuyaFukumura/reversi-next-js-app',
+        siteUrl: 'https://reversi-next-js-app.vercel.app/',
+    },
 ];
