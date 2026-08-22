@@ -99,4 +99,14 @@ export const apps: App[] = [
         githubUrl: 'https://github.com/TakuyaFukumura/reversi-next-js-app',
         siteUrl: 'https://reversi-next-js-app.vercel.app/',
     },
+    {
+        id: 'cost-share',
+        name: '家計負担割合計算アプリ',
+        shortDescription: '夫婦それぞれの手取り収入に応じて、家計の負担割合と拠出額を計算するアプリです。',
+        description:
+            '共働き夫婦向けに、完全収入比例で家計の負担割合と拠出額を計算するアプリです。' +
+            '共通予算をもとに、夫婦それぞれの手取り収入に応じた負担割合をリアルタイムで確認できます。',
+        githubUrl: 'https://github.com/TakuyaFukumura/cost-share-next-js-app',
+        siteUrl: 'https://cost-share-iota.vercel.app/',
+    },
 ];

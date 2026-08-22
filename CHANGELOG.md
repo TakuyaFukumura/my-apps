@@ -7,6 +7,14 @@
 
 ## [Unreleased]
 
+## [0.11.0] - 2026-08-22
+
+### 追加
+
+- 家計負担割合計算アプリをアプリ一覧に追加
+    - GitHub: https://github.com/TakuyaFukumura/cost-share-next-js-app
+    - サイト: https://cost-share-iota.vercel.app/
+
 ## [0.10.0] - 2026-04-30
 
 ### 追加
