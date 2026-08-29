@@ -6,7 +6,7 @@
  */
 
 import React from 'react';
-import {act, render, renderHook, screen} from '@testing-library/react';
+import {act, render, renderHook, screen, waitFor} from '@testing-library/react';
 import {DarkModeProvider, useDarkMode} from '@/app/components/DarkModeProvider';
 
 // localStorageをモック
@@ -70,13 +70,15 @@ describe('DarkModeProvider', () => {
             expect(screen.getByTestId('isDark')).toHaveTextContent('false');
         });
 
-        it('localStorageに保存されたテーマを読み込む', () => {
+        it('localStorageに保存されたテーマを読み込む', async () => {
             localStorageMock.getItem.mockReturnValue('dark');
 
             renderWithProvider(<TestComponent/>);
 
-            expect(screen.getByTestId('theme')).toHaveTextContent('dark');
-            expect(screen.getByTestId('isDark')).toHaveTextContent('true');
+            await waitFor(() => {
+                expect(screen.getByTestId('theme')).toHaveTextContent('dark');
+                expect(screen.getByTestId('isDark')).toHaveTextContent('true');
+            });
         });
 
         it('無効なlocalStorageの値は無視される', () => {
@@ -106,13 +108,15 @@ describe('DarkModeProvider', () => {
             expect(localStorageMock.setItem).toHaveBeenCalledWith('theme', 'dark');
         });
 
-        it('ダークモードからライトモードに切り替える', () => {
+        it('ダークモードからライトモードに切り替える', async () => {
             localStorageMock.getItem.mockReturnValue('dark');
 
             renderWithProvider(<TestComponent/>);
 
             // 初期状態の確認
-            expect(screen.getByTestId('theme')).toHaveTextContent('dark');
+            await waitFor(() => {
+                expect(screen.getByTestId('theme')).toHaveTextContent('dark');
+            });
 
             // ライトモードに切り替え
             act(() => {

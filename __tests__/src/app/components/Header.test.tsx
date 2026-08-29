@@ -6,7 +6,7 @@
  */
 
 import React from 'react';
-import {fireEvent, render, screen} from '@testing-library/react';
+import {fireEvent, render, screen, waitFor} from '@testing-library/react';
 import {DarkModeProvider} from '@/app/components/DarkModeProvider';
 import Header from '../../../../src/app/components/Header';
 import '@testing-library/jest-dom';
@@ -100,11 +100,13 @@ describe('Header', () => {
     });
 
     describe('ダークモード', () => {
-        it('ダークモード時に月アイコンが表示される', () => {
+        it('ダークモード時に月アイコンが表示される', async () => {
             window.localStorage.setItem('theme', 'dark');
             renderWithProvider();
 
-            expect(screen.getByText('🌙')).toBeInTheDocument();
+            await waitFor(() => {
+                expect(screen.getByText('🌙')).toBeInTheDocument();
+            });
         });
 
         it('ダークモード時にテキストラベルが表示されない', () => {
@@ -140,11 +142,13 @@ describe('Header', () => {
             expect(screen.queryByText('ライトモードにする')).not.toBeInTheDocument();
         });
 
-        it('ダークモードからライトモードに切り替わる', () => {
+        it('ダークモードからライトモードに切り替わる', async () => {
             renderWithProvider('dark');
 
             // 初期状態の確認
-            expect(screen.getByText('🌙')).toBeInTheDocument();
+            await waitFor(() => {
+                expect(screen.getByText('🌙')).toBeInTheDocument();
+            });
             expect(screen.queryByText('ライトモードにする')).not.toBeInTheDocument();
 
             // ボタンをクリック
