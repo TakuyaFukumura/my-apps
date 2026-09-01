@@ -7,6 +7,14 @@
 
 ## [Unreleased]
 
+## [0.12.0] - 2026-09-01
+
+### 追加
+
+- Story Snapをアプリ一覧に追加
+    - GitHub: https://github.com/TakuyaFukumura/story-snap-next-js-app
+    - サイト: https://story-snap-next-js-app.vercel.app/
+
 ## [0.11.2] - 2026-08-30
 
 ### 修正

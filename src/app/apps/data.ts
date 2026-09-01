@@ -109,4 +109,13 @@ export const apps: App[] = [
         githubUrl: 'https://github.com/TakuyaFukumura/cost-share-next-js-app',
         siteUrl: 'https://cost-share-iota.vercel.app/',
     },
+    {
+        id: 'story-snap',
+        name: 'Story Snap',
+        shortDescription: '日々の出来事を記録して振り返るアプリです。',
+        description:
+            '日々の出来事を記録し、思い出を振り返ることができるアプリです。',
+        githubUrl: 'https://github.com/TakuyaFukumura/story-snap-next-js-app',
+        siteUrl: 'https://story-snap-next-js-app.vercel.app/',
+    },
 ];
