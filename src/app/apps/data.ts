@@ -111,7 +111,7 @@ export const apps: App[] = [
     },
     {
         id: 'story-snap',
-        name: 'Story Snap',
+        name: '画像加工アプリ',
         shortDescription: '日々の出来事を記録して振り返るアプリです。',
         description:
             '日々の出来事を記録し、思い出を振り返ることができるアプリです。',
