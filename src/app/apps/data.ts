@@ -112,7 +112,7 @@ export const apps: App[] = [
     {
         id: 'story-snap',
         name: '画像加工アプリ',
-        shortDescription: '日々の出来事を記録して振り返るアプリです。',
+        shortDescription: 'アップロードした画像を加工し、モザイク処理やトリミングができるアプリです。',
         description:
             'アップロードした画像を加工し、モザイク処理やトリミングができるアプリです。',
         githubUrl: 'https://github.com/TakuyaFukumura/story-snap-next-js-app',
