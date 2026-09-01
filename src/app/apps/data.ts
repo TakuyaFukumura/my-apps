@@ -111,10 +111,12 @@ export const apps: App[] = [
     },
     {
         id: 'story-snap',
-        name: 'Story Snap',
-        shortDescription: '日々の出来事を記録して振り返るアプリです。',
+        name: '画像加工アプリ',
+        shortDescription: 'アップロードした画像を加工し、モザイク処理やトリミングができるアプリです。',
         description:
-            '日々の出来事を記録し、思い出を振り返ることができるアプリです。',
+            'SNS投稿向けの9:16キャンバスで、アップロードした画像の配置・トリミング・モザイク加工ができるアプリです。' +
+            '顔検出による自動モザイクに加え、手動で範囲を指定してモザイク強度を調整し、JPEGまたはPNGで保存できます。' +
+            '画像処理はブラウザ内で行うため、元画像をサーバーへアップロードせずに利用できます。',
         githubUrl: 'https://github.com/TakuyaFukumura/story-snap-next-js-app',
         siteUrl: 'https://story-snap-next-js-app.vercel.app/',
     },
