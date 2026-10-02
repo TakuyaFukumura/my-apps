@@ -122,7 +122,7 @@ export const apps: App[] = [
     },
     {
         id: 'amply',
-        name: 'Amply',
+        name: '消費アンペア計算アプリ',
         shortDescription: '家庭で使う家電のアンペア数を一覧・集計し、設定した上限と比較できるアプリです。',
         description:
             '家電ごとの使用アンペア数を一覧・集計し、設定した契約アンペア上限と比較できるアプリです。' +

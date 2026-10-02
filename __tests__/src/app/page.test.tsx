@@ -19,7 +19,7 @@ const reversiApp = {
 
 const amplyApp = {
     id: 'amply',
-    name: 'Amply',
+    name: '消費アンペア計算アプリ',
     githubUrl: 'https://github.com/TakuyaFukumura/amply-next-js-app',
     siteUrl: 'https://amply-next-js-app.vercel.app/',
 } as const;
@@ -131,7 +131,7 @@ describe('Home', () => {
             expect(detailLink).toHaveAttribute('href', `/apps/${reversiApp.id}`);
         });
 
-        it('Amplyが一覧に追加されている', () => {
+        it('消費アンペア計算アプリが一覧に追加されている', () => {
             expect(screen.getByText(amplyApp.name)).toBeInTheDocument();
 
             const siteLink = screen.getByRole('link', {
