@@ -120,4 +120,14 @@ export const apps: App[] = [
         githubUrl: 'https://github.com/TakuyaFukumura/story-snap-next-js-app',
         siteUrl: 'https://story-snap-next-js-app.vercel.app/',
     },
+    {
+        id: 'amply',
+        name: 'Amply',
+        shortDescription: '家庭で使う家電のアンペア数を一覧・集計し、設定した上限と比較できるアプリです。',
+        description:
+            '家電ごとの使用アンペア数を一覧・集計し、設定した契約アンペア上限と比較できるアプリです。' +
+            '家電の使用状態や起動時の電流を考慮して、合計や上限までの余裕を確認できます。',
+        githubUrl: 'https://github.com/TakuyaFukumura/amply-next-js-app',
+        siteUrl: 'https://amply-next-js-app.vercel.app/',
+    },
 ];

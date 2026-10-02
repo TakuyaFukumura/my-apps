@@ -17,6 +17,13 @@ const reversiApp = {
     siteUrl: 'https://reversi-next-js-app.vercel.app/',
 } as const;
 
+const amplyApp = {
+    id: 'amply',
+    name: 'Amply',
+    githubUrl: 'https://github.com/TakuyaFukumura/amply-next-js-app',
+    siteUrl: 'https://amply-next-js-app.vercel.app/',
+} as const;
+
 // next/link のモック
 jest.mock('next/link', () => {
     const MockLink = ({children, href, ...rest}: { children: React.ReactNode; href: string; [key: string]: unknown }) => (
@@ -122,6 +129,20 @@ describe('Home', () => {
                 name: `${reversiApp.name} の詳細を見る`,
             });
             expect(detailLink).toHaveAttribute('href', `/apps/${reversiApp.id}`);
+        });
+
+        it('Amplyが一覧に追加されている', () => {
+            expect(screen.getByText(amplyApp.name)).toBeInTheDocument();
+
+            const siteLink = screen.getByRole('link', {
+                name: `${amplyApp.name} のサイトを見る（新しいタブで開く）`,
+            });
+            expect(siteLink).toHaveAttribute('href', amplyApp.siteUrl);
+
+            const detailLink = screen.getByRole('link', {
+                name: `${amplyApp.name} の詳細を見る`,
+            });
+            expect(detailLink).toHaveAttribute('href', `/apps/${amplyApp.id}`);
         });
 
         it('「詳細を見る →」リンクが表示されない', () => {
