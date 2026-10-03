@@ -26,7 +26,7 @@ export const apps: App[] = [
     {
         id: 'visuasset',
         name: '資産可視化アプリ',
-        shortDescription: '保有資産の内訳や推移をグラフで可視化するアプリです。',
+        shortDescription: '保有資産の内訳や推移をグラフで可視化します。',
         description:
             '保有している資産の内訳や時系列での推移をグラフで可視化するアプリです。' +
             '資産のポートフォリオ管理や資産形成の進捗確認に活用できます。',
