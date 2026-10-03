@@ -16,7 +16,7 @@ export const apps: App[] = [
     {
         id: 'divichart',
         name: '配当可視化アプリ',
-        shortDescription: '配当金の受け取り状況をグラフで可視化するアプリです。',
+        shortDescription: '配当金の受け取り状況をグラフで可視化します。',
         description:
             '株式や投資信託から受け取った配当金の履歴をグラフで可視化するアプリです。' +
             '銘柄ごとの配当金や年間推移を一目で確認でき、投資管理に役立てることができます。',
