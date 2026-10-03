@@ -69,6 +69,12 @@ describe('Home', () => {
             });
         });
 
+        it('積立投資シミュレーターがブログアプリより前に表示される', () => {
+            const appNames = screen.getAllByRole('heading', {level: 2}).map((heading) => heading.textContent);
+
+            expect(appNames.indexOf('積立投資シミュレーター')).toBeLessThan(appNames.indexOf('ブログアプリ'));
+        });
+
         it('各アプリの簡易説明が表示される', () => {
             apps.forEach((app) => {
                 expect(screen.getByText(app.shortDescription)).toBeInTheDocument();
@@ -99,6 +105,18 @@ describe('Home', () => {
                     });
                     expect(siteLink).toBeInTheDocument();
                 }
+            });
+        });
+
+        it('各アプリにGitHubリンクが横並びで表示される', () => {
+            apps.forEach((app) => {
+                const githubLink = screen.getByRole('link', {
+                    name: `${app.name} のGitHubを見る（新しいタブで開く）`,
+                });
+                expect(githubLink).toHaveAttribute('href', app.githubUrl);
+                expect(githubLink).toHaveAttribute('target', '_blank');
+                expect(githubLink).toHaveAttribute('rel', 'noopener noreferrer');
+                expect(githubLink.parentElement).toHaveClass('flex-row');
             });
         });
 

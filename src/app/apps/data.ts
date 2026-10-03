@@ -16,7 +16,7 @@ export const apps: App[] = [
     {
         id: 'divichart',
         name: '配当可視化アプリ',
-        shortDescription: '配当金の受け取り状況をグラフで可視化するアプリです。',
+        shortDescription: '配当金の受け取り状況をグラフで可視化します。',
         description:
             '株式や投資信託から受け取った配当金の履歴をグラフで可視化するアプリです。' +
             '銘柄ごとの配当金や年間推移を一目で確認でき、投資管理に役立てることができます。',
@@ -26,7 +26,7 @@ export const apps: App[] = [
     {
         id: 'visuasset',
         name: '資産可視化アプリ',
-        shortDescription: '保有資産の内訳や推移をグラフで可視化するアプリです。',
+        shortDescription: '保有資産の内訳や推移をグラフで可視化します。',
         description:
             '保有している資産の内訳や時系列での推移をグラフで可視化するアプリです。' +
             '資産のポートフォリオ管理や資産形成の進捗確認に活用できます。',
@@ -46,15 +46,15 @@ export const apps: App[] = [
         siteUrl: 'https://coast-fire-next-js-app.vercel.app/',
     },
     {
-        id: 'blog',
-        name: 'ブログアプリ',
-        shortDescription: 'Markdown形式のファイルをブログ記事として表示するアプリです。',
+        id: 'investment-simulator',
+        name: '積立投資シミュレーター',
+        shortDescription: '毎月の積立額・年利・期間を入力して将来の資産額をシミュレーションするアプリです。',
         description:
-            'Markdown形式（.md）で書かれたファイルをブログ記事として表示するアプリです。' +
-            '記事の一覧表示や個別記事の表示に対応しており、' +
-            'シンプルなブログプラットフォームとして利用できます。',
-        githubUrl: 'https://github.com/TakuyaFukumura/blog-next-js-app',
-        siteUrl: 'https://blog-next-js-app-taupe.vercel.app/',
+            '毎月の積立額・年利・積立期間などのパラメータを入力することで、' +
+            '将来の資産額を複利計算でシミュレーションするアプリです。' +
+            '元本と運用益の内訳をグラフで確認でき、長期投資の効果を視覚的に把握できます。',
+        githubUrl: 'https://github.com/TakuyaFukumura/investment-simulator-vue-js',
+        siteUrl: 'https://investment-simulator-vue-js.vercel.app/',
     },
     {
         id: 'nisa',
@@ -79,15 +79,15 @@ export const apps: App[] = [
         siteUrl: 'https://household-management-next-js-app.vercel.app/',
     },
     {
-        id: 'investment-simulator',
-        name: '積立投資シミュレーター',
-        shortDescription: '毎月の積立額・年利・期間を入力して将来の資産額をシミュレーションするアプリです。',
+        id: 'blog',
+        name: 'ブログアプリ',
+        shortDescription: 'Markdown形式のファイルをブログ記事として表示するアプリです。',
         description:
-            '毎月の積立額・年利・積立期間などのパラメータを入力することで、' +
-            '将来の資産額を複利計算でシミュレーションするアプリです。' +
-            '元本と運用益の内訳をグラフで確認でき、長期投資の効果を視覚的に把握できます。',
-        githubUrl: 'https://github.com/TakuyaFukumura/investment-simulator-vue-js',
-        siteUrl: 'https://investment-simulator-vue-js.vercel.app/',
+            'Markdown形式（.md）で書かれたファイルをブログ記事として表示するアプリです。' +
+            '記事の一覧表示や個別記事の表示に対応しており、' +
+            'シンプルなブログプラットフォームとして利用できます。',
+        githubUrl: 'https://github.com/TakuyaFukumura/blog-next-js-app',
+        siteUrl: 'https://blog-next-js-app-taupe.vercel.app/',
     },
     {
         id: 'reversi',

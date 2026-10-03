@@ -52,18 +52,27 @@ export default function Home() {
                             <p className="text-sm text-gray-600 dark:text-gray-400 flex-1 mb-4">
                                 {app.shortDescription}
                             </p>
-                            <div className="flex flex-col gap-2 mt-auto relative z-10">
+                            <div className="flex flex-row gap-2 mt-auto relative z-10">
                                 {app.siteUrl && (
                                     <a
                                         href={app.siteUrl}
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         aria-label={`${app.name} のサイトを見る（新しいタブで開く）`}
-                                        className="text-center text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-lg px-4 py-2 transition-colors duration-200"
+                                        className="flex-1 text-center text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-lg px-4 py-2 transition-colors duration-200"
                                     >
-                                        サイトを見る
+                                        サイト
                                     </a>
                                 )}
+                                <a
+                                    href={app.githubUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    aria-label={`${app.name} のGitHubを見る（新しいタブで開く）`}
+                                    className="flex-1 text-center text-sm font-medium text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 rounded-lg px-4 py-2 transition-colors duration-200"
+                                >
+                                    GitHub
+                                </a>
                             </div>
                         </div>
                     ))}

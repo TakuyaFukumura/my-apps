@@ -64,17 +64,10 @@ describe('Header', () => {
             expect(homeLink).toHaveAttribute('href', '/');
         });
 
-        it('「アプリ一覧」ナビゲーションリンクが表示される', () => {
+        it('「アプリ一覧」ナビゲーションリンクが表示されない', () => {
             renderWithProvider();
 
-            expect(screen.getByRole('link', {name: 'アプリ一覧'})).toBeInTheDocument();
-        });
-
-        it('「アプリ一覧」リンクが/を指す', () => {
-            renderWithProvider();
-
-            const appsLink = screen.getByRole('link', {name: 'アプリ一覧'});
-            expect(appsLink).toHaveAttribute('href', '/');
+            expect(screen.queryByRole('link', {name: 'アプリ一覧'})).not.toBeInTheDocument();
         });
     });
 
