@@ -34,14 +34,6 @@ export default function Header() {
                                 my-apps
                             </Link>
                         </h1>
-                        <nav>
-                            <Link
-                                href="/"
-                                className="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
-                            >
-                                アプリ一覧
-                            </Link>
-                        </nav>
                     </div>
 
                     <div className="flex items-center">
