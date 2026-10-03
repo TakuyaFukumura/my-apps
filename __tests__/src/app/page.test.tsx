@@ -102,6 +102,18 @@ describe('Home', () => {
             });
         });
 
+        it('各アプリにGitHubリンクが横並びで表示される', () => {
+            apps.forEach((app) => {
+                const githubLink = screen.getByRole('link', {
+                    name: `${app.name} のGitHubを見る（新しいタブで開く）`,
+                });
+                expect(githubLink).toHaveAttribute('href', app.githubUrl);
+                expect(githubLink).toHaveAttribute('target', '_blank');
+                expect(githubLink).toHaveAttribute('rel', 'noopener noreferrer');
+                expect(githubLink.parentElement).toHaveClass('flex-row');
+            });
+        });
+
         it('各アプリ名が表示される', () => {
             apps.forEach((app) => {
                 expect(screen.getByText(app.name)).toBeInTheDocument();
