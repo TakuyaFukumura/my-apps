@@ -24,6 +24,13 @@ const amplyApp = {
     siteUrl: 'https://amply-next-js-app.vercel.app/',
 } as const;
 
+const bmiLogApp = {
+    id: 'bmilog',
+    name: 'BMI・体重ログ',
+    githubUrl: 'https://github.com/TakuyaFukumura/bmilog-next-js-app',
+    siteUrl: 'https://bmilog-next-js-app.vercel.app/',
+} as const;
+
 // next/link のモック
 jest.mock('next/link', () => {
     const MockLink = ({children, href, ...rest}: { children: React.ReactNode; href: string; [key: string]: unknown }) => (
@@ -161,6 +168,25 @@ describe('Home', () => {
                 name: `${amplyApp.name} の詳細を見る`,
             });
             expect(detailLink).toHaveAttribute('href', `/apps/${amplyApp.id}`);
+        });
+
+        it('BMI・体重ログが一覧に追加されている', () => {
+            expect(screen.getByText(bmiLogApp.name)).toBeInTheDocument();
+
+            const siteLink = screen.getByRole('link', {
+                name: `${bmiLogApp.name} のサイトを見る（新しいタブで開く）`,
+            });
+            expect(siteLink).toHaveAttribute('href', bmiLogApp.siteUrl);
+
+            const githubLink = screen.getByRole('link', {
+                name: `${bmiLogApp.name} のGitHubを見る（新しいタブで開く）`,
+            });
+            expect(githubLink).toHaveAttribute('href', bmiLogApp.githubUrl);
+
+            const detailLink = screen.getByRole('link', {
+                name: `${bmiLogApp.name} の詳細を見る`,
+            });
+            expect(detailLink).toHaveAttribute('href', `/apps/${bmiLogApp.id}`);
         });
 
         it('「詳細を見る →」リンクが表示されない', () => {
