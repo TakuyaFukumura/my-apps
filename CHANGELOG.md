@@ -7,6 +7,12 @@
 
 ## [Unreleased]
 
+### 追加
+
+- BMI・体重ログをアプリ一覧に追加
+    - GitHub: https://github.com/TakuyaFukumura/bmilog-next-js-app
+    - サイト: https://bmilog-next-js-app.vercel.app/
+
 ## [0.12.3] - 2026-10-03
 
 ### 追加

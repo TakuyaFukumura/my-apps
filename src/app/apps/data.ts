@@ -14,6 +14,17 @@ export const AUTHOR = {
 
 export const apps: App[] = [
     {
+        id: 'bmilog',
+        name: 'BMI・体重ログ',
+        shortDescription: '匿名サンプルCSVから体重の推移とBMIを確認できるアプリです。',
+        description:
+            '匿名サンプルCSVをもとに、最新の体重・BMIや目標体重との差分、体重の推移を確認できるアプリです。' +
+            'BMIの標準範囲や目標体重の基準線を表示し、記録データの形式や値に問題がある場合はエラーを確認できます。' +
+            '画面からの記録入力や認証機能はなく、CSVを直接編集してデータを更新します。',
+        githubUrl: 'https://github.com/TakuyaFukumura/bmilog-next-js-app',
+        siteUrl: 'https://bmilog-next-js-app.vercel.app/',
+    },
+    {
         id: 'divichart',
         name: '配当可視化アプリ',
         shortDescription: '配当金の受け取り状況をグラフで可視化します。',
