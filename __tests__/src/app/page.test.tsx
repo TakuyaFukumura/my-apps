@@ -26,7 +26,7 @@ const amplyApp = {
 
 const bmiLogApp = {
     id: 'bmilog',
-    name: 'BMI・体重ログ',
+    name: 'BMI・体重可視化アプリ',
     githubUrl: 'https://github.com/TakuyaFukumura/bmilog-next-js-app',
     siteUrl: 'https://bmilog-next-js-app.vercel.app/',
 } as const;
@@ -170,7 +170,7 @@ describe('Home', () => {
             expect(detailLink).toHaveAttribute('href', `/apps/${amplyApp.id}`);
         });
 
-        it('BMI・体重ログが一覧に追加されている', () => {
+        it('BMI・体重可視化アプリが一覧に追加されている', () => {
             expect(screen.getByText(bmiLogApp.name)).toBeInTheDocument();
 
             const siteLink = screen.getByRole('link', {

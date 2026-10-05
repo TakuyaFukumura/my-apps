@@ -15,7 +15,7 @@ export const AUTHOR = {
 export const apps: App[] = [
     {
         id: 'bmilog',
-        name: 'BMI・体重ログ',
+        name: 'BMI・体重可視化アプリ',
         shortDescription: '体重の推移とBMIを視覚化します。',
         description:
             '匿名サンプルCSVをもとに、最新の体重・BMIや目標体重との差分、体重の推移を確認できるアプリです。' +
