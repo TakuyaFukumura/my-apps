@@ -82,6 +82,12 @@ describe('Home', () => {
             expect(appNames.indexOf('積立投資シミュレーター')).toBeLessThan(appNames.indexOf('ブログアプリ'));
         });
 
+        it('BMI・体重可視化アプリがブログアプリより前に表示される', () => {
+            const appNames = screen.getAllByRole('heading', {level: 2}).map((heading) => heading.textContent);
+
+            expect(appNames.indexOf('BMI・体重可視化アプリ')).toBeLessThan(appNames.indexOf('ブログアプリ'));
+        });
+
         it('各アプリの簡易説明が表示される', () => {
             apps.forEach((app) => {
                 expect(screen.getByText(app.shortDescription)).toBeInTheDocument();

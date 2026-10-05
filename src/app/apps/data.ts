@@ -14,16 +14,6 @@ export const AUTHOR = {
 
 export const apps: App[] = [
     {
-        id: 'bmilog',
-        name: 'BMI・体重可視化アプリ',
-        shortDescription: '体重の推移とBMIを視覚化します。',
-        description:
-            '最新の体重・BMIや目標体重との差分、体重の推移を確認できるアプリです。' +
-            'BMIの標準範囲や目標体重の基準線を表示します。',
-        githubUrl: 'https://github.com/TakuyaFukumura/bmilog-next-js-app',
-        siteUrl: 'https://bmilog-next-js-app.vercel.app/',
-    },
-    {
         id: 'divichart',
         name: '配当可視化アプリ',
         shortDescription: '配当金の受け取り状況をグラフで可視化します。',
@@ -87,6 +77,16 @@ export const apps: App[] = [
             '予算管理機能やCSVアップロード機能も備えており、家計の管理に役立てることができます。',
         githubUrl: 'https://github.com/TakuyaFukumura/household-management-next-js-app',
         siteUrl: 'https://household-management-next-js-app.vercel.app/',
+    },
+    {
+        id: 'bmilog',
+        name: 'BMI・体重可視化アプリ',
+        shortDescription: '体重の推移とBMIを視覚化します。',
+        description:
+            '最新の体重・BMIや目標体重との差分、体重の推移を確認できるアプリです。' +
+            'BMIの標準範囲や目標体重の基準線を表示します。',
+        githubUrl: 'https://github.com/TakuyaFukumura/bmilog-next-js-app',
+        siteUrl: 'https://bmilog-next-js-app.vercel.app/',
     },
     {
         id: 'blog',
