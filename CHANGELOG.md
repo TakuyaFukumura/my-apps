@@ -7,6 +7,12 @@
 
 ## [Unreleased]
 
+### 追加
+
+- 人生可視化アプリをアプリ一覧に追加
+    - GitHub: https://github.com/TakuyaFukumura/life-time-next-js-app
+    - サイト: https://life-time-next-js-app.vercel.app/
+
 ## [0.13.1] - 2026-10-05
 
 ### 変更

@@ -31,6 +31,13 @@ const bmiLogApp = {
     siteUrl: 'https://bmilog-next-js-app.vercel.app/',
 } as const;
 
+const lifeTimeApp = {
+    id: 'life-time',
+    name: '人生可視化アプリ',
+    githubUrl: 'https://github.com/TakuyaFukumura/life-time-next-js-app',
+    siteUrl: 'https://life-time-next-js-app.vercel.app/',
+} as const;
+
 // next/link のモック
 jest.mock('next/link', () => {
     const MockLink = ({children, href, ...rest}: { children: React.ReactNode; href: string; [key: string]: unknown }) => (
@@ -86,6 +93,25 @@ describe('Home', () => {
             const appNames = screen.getAllByRole('heading', {level: 2}).map((heading) => heading.textContent);
 
             expect(appNames.indexOf('BMI・体重可視化アプリ')).toBeLessThan(appNames.indexOf('ブログアプリ'));
+        });
+
+        it('人生可視化アプリが一覧に追加されている', () => {
+            expect(screen.getByText(lifeTimeApp.name)).toBeInTheDocument();
+
+            const siteLink = screen.getByRole('link', {
+                name: `${lifeTimeApp.name} のサイトを見る（新しいタブで開く）`,
+            });
+            expect(siteLink).toHaveAttribute('href', lifeTimeApp.siteUrl);
+
+            const githubLink = screen.getByRole('link', {
+                name: `${lifeTimeApp.name} のGitHubを見る（新しいタブで開く）`,
+            });
+            expect(githubLink).toHaveAttribute('href', lifeTimeApp.githubUrl);
+
+            const detailLink = screen.getByRole('link', {
+                name: `${lifeTimeApp.name} の詳細を見る`,
+            });
+            expect(detailLink).toHaveAttribute('href', `/apps/${lifeTimeApp.id}`);
         });
 
         it('各アプリの簡易説明が表示される', () => {

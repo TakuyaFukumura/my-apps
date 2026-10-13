@@ -89,6 +89,16 @@ export const apps: App[] = [
         siteUrl: 'https://bmilog-next-js-app.vercel.app/',
     },
     {
+        id: 'life-time',
+        name: '人生可視化アプリ',
+        shortDescription: '人生の出来事や目標を、0歳から100歳までの時間軸上に表示します。',
+        description:
+            '人生の出来事や目標を年齢ごとのタイムラインに表示するアプリです。' +
+            '現在年齢までの経過とこれからの目標を見比べながら、人生の時間軸を視覚的に確認できます。',
+        githubUrl: 'https://github.com/TakuyaFukumura/life-time-next-js-app',
+        siteUrl: 'https://life-time-next-js-app.vercel.app/',
+    },
+    {
         id: 'blog',
         name: 'ブログアプリ',
         shortDescription: 'Markdown形式のファイルをブログ記事として表示するアプリです。',
