@@ -7,6 +7,12 @@
 
 ## [Unreleased]
 
+### 追加
+
+- 収入可視化アプリをアプリ一覧に追加
+    - GitHub: https://github.com/TakuyaFukumura/income-viewer-next-js-app
+    - サイト: https://income-viewer-next-js-app.vercel.app/
+
 ## [0.14.0] - 2026-10-13
 
 ### 追加
