@@ -34,6 +34,16 @@ export const apps: App[] = [
         siteUrl: 'https://visuasset-next-js-app.vercel.app/',
     },
     {
+        id: 'income-viewer',
+        name: '収入可視化アプリ',
+        shortDescription: '給与収入・配当金・その他の手取り収入を年ごとに可視化します。',
+        description:
+            '給与収入・配当金・その他の手取り収入を年ごとに積み上げ棒グラフとデータ表で確認できるアプリです。' +
+            '収入の内訳や年ごとの推移を視覚的に把握できます。',
+        githubUrl: 'https://github.com/TakuyaFukumura/income-viewer-next-js-app',
+        siteUrl: 'https://income-viewer-next-js-app.vercel.app/',
+    },
+    {
         id: 'coast-fire',
         name: 'Coast FIRE 必要資金計算アプリ',
         shortDescription: 'Coast FIRE達成に必要な現時点での資金を計算するアプリです。',

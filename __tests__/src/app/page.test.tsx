@@ -38,6 +38,13 @@ const lifeTimeApp = {
     siteUrl: 'https://life-time-next-js-app.vercel.app/',
 } as const;
 
+const incomeViewerApp = {
+    id: 'income-viewer',
+    name: '収入可視化アプリ',
+    githubUrl: 'https://github.com/TakuyaFukumura/income-viewer-next-js-app',
+    siteUrl: 'https://income-viewer-next-js-app.vercel.app/',
+} as const;
+
 // next/link のモック
 jest.mock('next/link', () => {
     const MockLink = ({children, href, ...rest}: { children: React.ReactNode; href: string; [key: string]: unknown }) => (
@@ -112,6 +119,25 @@ describe('Home', () => {
                 name: `${lifeTimeApp.name} の詳細を見る`,
             });
             expect(detailLink).toHaveAttribute('href', `/apps/${lifeTimeApp.id}`);
+        });
+
+        it('収入可視化アプリが一覧に追加されている', () => {
+            expect(screen.getByText(incomeViewerApp.name)).toBeInTheDocument();
+
+            const siteLink = screen.getByRole('link', {
+                name: `${incomeViewerApp.name} のサイトを見る（新しいタブで開く）`,
+            });
+            expect(siteLink).toHaveAttribute('href', incomeViewerApp.siteUrl);
+
+            const githubLink = screen.getByRole('link', {
+                name: `${incomeViewerApp.name} のGitHubを見る（新しいタブで開く）`,
+            });
+            expect(githubLink).toHaveAttribute('href', incomeViewerApp.githubUrl);
+
+            const detailLink = screen.getByRole('link', {
+                name: `${incomeViewerApp.name} の詳細を見る`,
+            });
+            expect(detailLink).toHaveAttribute('href', `/apps/${incomeViewerApp.id}`);
         });
 
         it('各アプリの簡易説明が表示される', () => {
