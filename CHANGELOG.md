@@ -7,6 +7,12 @@
 
 ## [Unreleased]
 
+### 追加
+
+- テキスト読み上げアプリをアプリ一覧に追加
+    - GitHub: https://github.com/TakuyaFukumura/text-speaker-next-js-app
+    - サイト: https://text-speaker-next-js-app.vercel.app/
+
 ## [0.15.0] - 2026-10-21
 
 ### 追加

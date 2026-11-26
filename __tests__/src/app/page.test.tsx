@@ -45,6 +45,13 @@ const incomeViewerApp = {
     siteUrl: 'https://income-viewer-next-js-app.vercel.app/',
 } as const;
 
+const textSpeakerApp = {
+    id: 'text-speaker',
+    name: 'テキスト読み上げアプリ',
+    githubUrl: 'https://github.com/TakuyaFukumura/text-speaker-next-js-app',
+    siteUrl: 'https://text-speaker-next-js-app.vercel.app/',
+} as const;
+
 // next/link のモック
 jest.mock('next/link', () => {
     const MockLink = ({children, href, ...rest}: { children: React.ReactNode; href: string; [key: string]: unknown }) => (
@@ -138,6 +145,25 @@ describe('Home', () => {
                 name: `${incomeViewerApp.name} の詳細を見る`,
             });
             expect(detailLink).toHaveAttribute('href', `/apps/${incomeViewerApp.id}`);
+        });
+
+        it('テキスト読み上げアプリが一覧に追加されている', () => {
+            expect(screen.getByText(textSpeakerApp.name)).toBeInTheDocument();
+
+            const siteLink = screen.getByRole('link', {
+                name: `${textSpeakerApp.name} のサイトを見る（新しいタブで開く）`,
+            });
+            expect(siteLink).toHaveAttribute('href', textSpeakerApp.siteUrl);
+
+            const githubLink = screen.getByRole('link', {
+                name: `${textSpeakerApp.name} のGitHubを見る（新しいタブで開く）`,
+            });
+            expect(githubLink).toHaveAttribute('href', textSpeakerApp.githubUrl);
+
+            const detailLink = screen.getByRole('link', {
+                name: `${textSpeakerApp.name} の詳細を見る`,
+            });
+            expect(detailLink).toHaveAttribute('href', `/apps/${textSpeakerApp.id}`);
         });
 
         it('各アプリの簡易説明が表示される', () => {
