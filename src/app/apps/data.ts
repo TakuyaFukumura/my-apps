@@ -14,6 +14,16 @@ export const AUTHOR = {
 
 export const apps: App[] = [
     {
+        id: 'text-speaker',
+        name: 'テキスト読み上げアプリ',
+        shortDescription: '入力した文章をブラウザー内蔵の音声合成機能で読み上げます。',
+        description:
+            '入力した文章をブラウザー内蔵の音声合成機能で読み上げるアプリです。' +
+            '日本語音声や読み上げ速度を選択でき、長文も分割して連続再生できます。',
+        githubUrl: 'https://github.com/TakuyaFukumura/text-speaker-next-js-app',
+        siteUrl: 'https://text-speaker-next-js-app.vercel.app/',
+    },
+    {
         id: 'divichart',
         name: '配当可視化アプリ',
         shortDescription: '配当金の受け取り状況をグラフで可視化します。',
